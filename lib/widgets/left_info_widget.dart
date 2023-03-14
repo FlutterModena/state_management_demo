@@ -5,7 +5,7 @@ class LeftInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //debugPrint('LeftInfoWidget build');
+    debugPrint('LeftInfoWidget build');
     return Expanded(
       child: Container(
         decoration: BoxDecoration(

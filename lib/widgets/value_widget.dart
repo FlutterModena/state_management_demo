@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:state_management_demo/bloc/value_bloc.dart';
 
 class ValueWidget extends StatelessWidget {
   const ValueWidget({
@@ -7,7 +8,9 @@ class ValueWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //debugPrint('ValueWidget build');
+    debugPrint('ValueWidget build');
+    final value = ValueBloc.watch(context).value.toStringAsFixed(2);
+
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -18,7 +21,7 @@ class ValueWidget extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'value',
+            value,
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:state_management_demo/widgets/value_widget.dart';
 
 class CurrentValueWidget extends StatelessWidget {
-  const CurrentValueWidget({super.key});
+  const CurrentValueWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    //debugPrint('CurrentValueWidget build');
+    debugPrint('CurrentValueWidget build');
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
@@ -21,7 +23,7 @@ class CurrentValueWidget extends StatelessWidget {
             ),
           ],
         ),
-        child: ValueWidget(),
+        child: const ValueWidget(),
       ),
     );
   }

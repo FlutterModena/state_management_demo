@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:state_management_demo/bloc/value_bloc.dart';
 import 'package:state_management_demo/widgets/current_value_widget.dart';
 import 'package:state_management_demo/widgets/left_info_widget.dart';
 
@@ -65,15 +66,18 @@ class _StateHomePageState extends State<StateHomePage> {
                 },
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    LeftInfoWidget(),
-                    const SizedBox(width: 8),
-                    CurrentValueWidget(),
-                  ],
+            ValueBloc(
+              value: _value,
+              child: Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: const [
+                      LeftInfoWidget(),
+                      SizedBox(width: 8),
+                      CurrentValueWidget(),
+                    ],
+                  ),
                 ),
               ),
             ),
